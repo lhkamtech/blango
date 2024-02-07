@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from blog.models import Tag, Post
+from blog.models import Tag, Post, Comment
 admin.site.register(Tag)
 
 # Custom approach (configure how the admin site behaves)
@@ -13,3 +13,4 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ["title", "slug", "published_at"]
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comment)
