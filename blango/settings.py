@@ -120,8 +120,12 @@ class Dev(Configuration):
         'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     ]
 
-
-
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+            "LOCATION": "unique-snowflake",
+        }
+    }
 
     # Crispy Forms
     CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
